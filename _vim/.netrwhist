@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/yura/Code/Django/mysite'
-let g:netrw_dirhist_2='/home/yura/Code/Android/ChiChiApp_Android'
-let g:netrw_dirhist_3='/home/yura/Code/Django/mysite'
-let g:netrw_dirhist_4='/home/yura/Code/Django/depotapp'
-let g:netrw_dirhist_5='/home/yura/Code/Django/depot'
-let g:netrw_dirhist_6='/usr/share/X11'
