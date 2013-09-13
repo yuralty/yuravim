@@ -160,9 +160,11 @@ Bundle 'ervandew/supertab'
 
 " syntax checker
 Bundle 'Syntastic'
+Bundle 'Engspchk'
 
 " syntax plugins
 Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
+Bundle 'klen/python-mode'
 
 
 
