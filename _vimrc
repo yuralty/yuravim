@@ -145,6 +145,8 @@ Bundle 'Wombat'
 Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'Command-T'
+Bundle 'ctrlp.vim'
 
 " Version control
 Bundle 'Gundo'
@@ -158,6 +160,10 @@ Bundle 'ervandew/supertab'
 
 " syntax checker
 Bundle 'Syntastic'
+
+" syntax plugins
+Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
+
 
 
 
