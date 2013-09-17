@@ -145,7 +145,11 @@ Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 Bundle 'mileszs/ack.vim'
 "Bundle 'Command-T'
+<<<<<<< HEAD
 Bundle 'ctrlp.vim'
+=======
+Bundle 'kien/ctrlp.vim'
+>>>>>>> vundle
 
 " Version control
 Bundle 'Gundo'
@@ -156,13 +160,20 @@ Bundle 'The-NERD-Commenter'
 Bundle 'UltiSnips'
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'ervandew/supertab'
+<<<<<<< HEAD
 Bundle 'davidhalter/jedi-vim'
 Bundle 'SearchComplete'
+=======
+"Bundle 'pythoncomplete'
+Bundle 'davidhalter/jedi-vim'
+
+>>>>>>> vundle
 
 " syntax checker
 Bundle 'Syntastic'
 Bundle 'Engspchk'
 
+<<<<<<< HEAD
 " syntax plugins
 Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 "Bundle 'klen/python-mode'
@@ -172,11 +183,21 @@ let g:SuperTabRetainCompletionType=2
 let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
 
+=======
+" lang enhance
+"Bundle 'klen/python-mode'
+Bundle 'jcf/vim-latex'
+>>>>>>> vundle
 
+let g:SuperTabRetainCompletionType=2
+let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
+<<<<<<< HEAD
 "let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>'] 
 "let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>'] 
 "let g:SuperTabDefaultCompletionType = '<C-Tab>' 
+=======
+>>>>>>> vundle
 
 
 
