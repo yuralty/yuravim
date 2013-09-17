@@ -10,9 +10,8 @@
 " ==========================================================
 " Plugins included
 " ==========================================================
-" Pathogen
-"     Better Management of VIM plugins
-"
+" Vundle
+" 
 " GunDo
 "     Visual Undo in vim with diff's to check the differences
 "
@@ -154,24 +153,30 @@ Bundle 'motemen/git-vim'
 
 " Input aids
 Bundle 'The-NERD-Commenter'
-"Bundle 'UltiSnips'
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'UltiSnips'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'ervandew/supertab'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'SearchComplete'
 
 " syntax checker
 Bundle 'Syntastic'
 Bundle 'Engspchk'
 
 " syntax plugins
-"Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
-Bundle 'klen/python-mode'
+Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
+"Bundle 'klen/python-mode'
+Bundle 'qrps/lilypond-vim'
+let g:SuperTabLeadingSpaceCompletion = 0
+let g:SuperTabRetainCompletionType=2
+let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
 
 
 
-let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>'] 
-let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>'] 
-let g:SuperTabDefaultCompletionType = '<C-Tab>' 
+"let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>'] 
+"let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>'] 
+"let g:SuperTabDefaultCompletionType = '<C-Tab>' 
 
 
 
@@ -186,7 +191,7 @@ filetype plugin on	      " This makes vim invoke filetype plugins
 set number                    " Display line numbers
 set numberwidth=1             " using only 1 column (and 1 space) while possible
 set background=dark           " We are using dark background in vim
-set guifont=Monospace\ 14
+set guifont=Source\ Code\ Pro\ Semibold\ 15
 set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
 set wildmode=full             " <Tab> cycles between all matching choices.
@@ -313,6 +318,10 @@ au FileType coffee setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smart
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
+
+" Disable python slow checking
+"let g:pymode_lint = 0
+let g:syntastic_ignore_files=[".*\.py$"]
 
 " Latex
 let g:tex_flavor='latex'
