@@ -145,7 +145,7 @@ Bundle 'Wombat'
 Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'Command-T'
+"Bundle 'Command-T'
 Bundle 'ctrlp.vim'
 
 " Version control
@@ -154,7 +154,7 @@ Bundle 'motemen/git-vim'
 
 " Input aids
 Bundle 'The-NERD-Commenter'
-Bundle 'UltiSnips'
+"Bundle 'UltiSnips'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'ervandew/supertab'
 
@@ -163,7 +163,7 @@ Bundle 'Syntastic'
 Bundle 'Engspchk'
 
 " syntax plugins
-Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
+"Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 Bundle 'klen/python-mode'
 
 
