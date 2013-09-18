@@ -10,8 +10,9 @@
 " ==========================================================
 " Plugins included
 " ==========================================================
-" Vundle
-" 
+" Pathogen
+"     Better Management of VIM plugins
+"
 " GunDo
 "     Visual Undo in vim with diff's to check the differences
 "
@@ -145,11 +146,7 @@ Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 Bundle 'mileszs/ack.vim'
 "Bundle 'Command-T'
-<<<<<<< HEAD
-Bundle 'ctrlp.vim'
-=======
 Bundle 'kien/ctrlp.vim'
->>>>>>> vundle
 
 " Version control
 Bundle 'Gundo'
@@ -158,46 +155,28 @@ Bundle 'motemen/git-vim'
 " Input aids
 Bundle 'The-NERD-Commenter'
 Bundle 'UltiSnips'
-"Bundle 'Valloric/YouCompleteMe'
-Bundle 'ervandew/supertab'
-<<<<<<< HEAD
-Bundle 'davidhalter/jedi-vim'
+"Bundle 'ervandew/supertab'
+"Bundle 'davidhalter/jedi-vim'
 Bundle 'SearchComplete'
-=======
-"Bundle 'pythoncomplete'
-Bundle 'davidhalter/jedi-vim'
+Bundle 'Valloric/YouCompleteMe'
 
->>>>>>> vundle
 
 " syntax checker
 Bundle 'Syntastic'
-Bundle 'Engspchk'
+"Bundle 'Engspchk'
 
-<<<<<<< HEAD
-" syntax plugins
-Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
-"Bundle 'klen/python-mode'
-Bundle 'qrps/lilypond-vim'
-let g:SuperTabLeadingSpaceCompletion = 0
-let g:SuperTabRetainCompletionType=2
-let g:SuperTabDefaultCompletionType="<C-X><C-O>"
-
-
-=======
 " lang enhance
 "Bundle 'klen/python-mode'
-Bundle 'jcf/vim-latex'
->>>>>>> vundle
+Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
+Bundle 'lilypond-vim'
 
-let g:SuperTabRetainCompletionType=2
-let g:SuperTabDefaultCompletionType="<C-X><C-O>"
+"let g:SuperTabRetainCompletionType=2
+"let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
-<<<<<<< HEAD
-"let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>'] 
-"let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>'] 
-"let g:SuperTabDefaultCompletionType = '<C-Tab>' 
-=======
->>>>>>> vundle
+let g:UltiSnipsExpandTrigger="<c-j>"
+"let g:UltiSnipsListSnippets="<c-s-tab>"
+"let g:ycm_key_list_previous_completion=['<Up>']
+
 
 
 
@@ -212,7 +191,7 @@ filetype plugin on	      " This makes vim invoke filetype plugins
 set number                    " Display line numbers
 set numberwidth=1             " using only 1 column (and 1 space) while possible
 set background=dark           " We are using dark background in vim
-set guifont=Source\ Code\ Pro\ Semibold\ 15
+set guifont=Source\ Code\ Pro\ Medium\ 16
 set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
 set wildmode=full             " <Tab> cycles between all matching choices.
@@ -339,10 +318,6 @@ au FileType coffee setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smart
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
-
-" Disable python slow checking
-"let g:pymode_lint = 0
-let g:syntastic_ignore_files=[".*\.py$"]
 
 " Latex
 let g:tex_flavor='latex'
