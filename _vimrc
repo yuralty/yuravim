@@ -99,12 +99,6 @@ nmap <leader>cc :cclose<CR>
 " for when we forget to use sudo to open/edit a file
 cmap w!! w !sudo tee % >/dev/null
 
-" ctrl-jklm  changes to that split
-
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
 " and lets make these all work in insert mode too ( <C-O> makes next cmd
 "  happen as if in command mode )
 imap <C-W> <C-O><C-W>
@@ -126,10 +120,25 @@ map <leader>j :RopeGotoDefinition<CR>
 
 " Rename whatever the cursor is on (including references to it)
 map <leader>r :RopeRename<CR>
+
+" yura mappings
+" Turn off arrows moving in command mode
+nmap <Left> <Nop>
+nmap <Right> <Nop>
+nmap <Up> <Nop>
+nmap <Down> <Nop>
+map <leader>s :w<CR>
+
+" Use ctrl+arrows to switch between windows
+map <C-Down> <C-w>j
+map <C-Up> <C-w>k
+map <C-Left> <C-w>h
+map <C-Right> <C-w>l
+
 " ==========================================================
-" Pathogen - Allows us to organize our vim plugins
+" Vundle - Allows us to organize our vim plugins
 " ==========================================================
-" Load pathogen with docs for all plugins
+" Setup vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -139,13 +148,12 @@ Bundle 'gmarik/vundle'
 
 " Appearence and themes
 Bundle 'CSApprox'
-Bundle 'Wombat'
+Bundle 'wombat256.vim'
 
 " File list and search
 Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 Bundle 'mileszs/ack.vim'
-"Bundle 'Command-T'
 Bundle 'kien/ctrlp.vim'
 
 " Version control
@@ -155,8 +163,6 @@ Bundle 'motemen/git-vim'
 " Input aids
 Bundle 'The-NERD-Commenter'
 Bundle 'UltiSnips'
-"Bundle 'ervandew/supertab'
-"Bundle 'davidhalter/jedi-vim'
 Bundle 'SearchComplete'
 Bundle 'Valloric/YouCompleteMe'
 
@@ -166,16 +172,11 @@ Bundle 'Syntastic'
 "Bundle 'Engspchk'
 
 " lang enhance
-"Bundle 'klen/python-mode'
 Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
-Bundle 'lilypond-vim'
+Bundle 'qrps/lilypond-vim'
 
-"let g:SuperTabRetainCompletionType=2
-"let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
 let g:UltiSnipsExpandTrigger="<c-j>"
-"let g:UltiSnipsListSnippets="<c-s-tab>"
-"let g:ycm_key_list_previous_completion=['<Up>']
 
 
 
@@ -229,7 +230,7 @@ set virtualedit=block       " Let cursor move past the last char in <C-v> mode
 set scrolloff=3             " Keep 3 context lines above and below the cursor
 set backspace=2             " Allow backspacing over autoindent, EOL, and BOL
 set showmatch               " Briefly jump to a paren once it's balanced
-set wrap                  " don't wrap text
+set wrap                    " wrap text
 set linebreak               " don't wrap textin the middle of a word
 set autoindent              " always set autoindenting on
 set smartindent             " use smart indent if there is no indent file
@@ -274,7 +275,8 @@ if has("gui_running")
     set guioptions-=T
 endif
 
-colorscheme wombat 
+" Set colors and themes
+colorscheme wombat256mod
 set t_Co=256
 
 " Paste from clipboard
