@@ -101,10 +101,10 @@ cmap w!! w !sudo tee % >/dev/null
 
 " ctrl-jklm  changes to that split
 
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+map <C-S-j> <c-w>j
+map <C-S-k> <c-w>k
+map <C-S-l> <c-w>l
+map <C-S-h> <c-w>h
 " and lets make these all work in insert mode too ( <C-O> makes next cmd
 "  happen as if in command mode )
 imap <C-W> <C-O><C-W>
@@ -126,6 +126,8 @@ map <leader>j :RopeGotoDefinition<CR>
 
 " Rename whatever the cursor is on (including references to it)
 map <leader>r :RopeRename<CR>
+
+map <leader>s :w<CR>
 " ==========================================================
 " Pathogen - Allows us to organize our vim plugins
 " ==========================================================
@@ -155,10 +157,10 @@ Bundle 'motemen/git-vim'
 " Input aids
 Bundle 'The-NERD-Commenter'
 Bundle 'UltiSnips'
-"Bundle 'ervandew/supertab'
-"Bundle 'davidhalter/jedi-vim'
 Bundle 'SearchComplete'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'surround.vim'
+Bundle 'klen/rope-vim'
 
 
 " syntax checker
