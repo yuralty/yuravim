@@ -121,11 +121,15 @@ nmap <Down> <Nop>
 map <leader>s :w<CR>
 nmap <C-n> :call NumberToggle()<CR>
 
+" Use <leader>n/m to switch between tabs
+map <leader>z <Esc>:tabprevious <CR>
+map <leader>x <Esc>:tabnext <CR>
+
 " Use ctrl+arrows to switch between windows
-map <C-Down> <C-w>j
-map <C-Up> <C-w>k
-map <C-Left> <C-w>h
-map <C-Right> <C-w>l
+map <C-z> <C-w>j
+map <C-k> <C-w>k
+map <C-h> <C-w>h
+map <C-l> <C-w>l
 
 " ==========================================================
 " Vundle - Allows us to organize our vim plugins
@@ -141,6 +145,7 @@ Bundle 'gmarik/vundle'
 " Appearence and themes
 Bundle 'CSApprox'
 Bundle 'wombat256.vim'
+Bundle 'Lokaltog/vim-powerline'
 
 " File list and search
 Bundle 'The-NERD-tree'
@@ -164,15 +169,18 @@ Bundle 'rails.vim'
 
 " syntax checker
 Bundle 'Syntastic'
-"Bundle 'Engspchk'
+Bundle 'Engspchk'
 
 " lang enhance
 Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 Bundle 'qrps/lilypond-vim'
+Bundle 'pep8'
 
 
 let g:UltiSnipsExpandTrigger="<c-j>"
-
+let g:ycm_global_ycm_extra_conf="~/.vim/ycm/.ycm_extra_conf.py"
+let g:Powerline_symbols='fancy'
+set laststatus=2
 
 
 
@@ -187,10 +195,12 @@ filetype plugin on	      " This makes vim invoke filetype plugins
 set number                    " Display line numbers
 set numberwidth=1             " using only 1 column (and 1 space) while possible
 set background=dark           " We are using dark background in vim
-set guifont=Source\ Code\ Pro\ Medium\ 16
+"set guifont=Source\ Code\ Pro\ Medium\ 16
+set guifont=Inconsolata\ for\ Powerline\ Bold\ 17
 set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
 set wildmode=full             " <Tab> cycles between all matching choices.
+set mouse=a                   " Enable mouse
 
 " don't bell or blink
 set noerrorbells
@@ -275,8 +285,6 @@ endif
 colorscheme wombat256mod
 set t_Co=256
 
-" Paste from clipboard
-map <leader>p "+p
 
 " Quit window on <leader>q
 nnoremap <leader>q :q<CR>
@@ -306,7 +314,7 @@ let g:acp_completeoptPreview=1
 " ============================================================
 " Mako/HTML
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
-autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,xhtml,xml,css,eruby,tex,ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " Python
 "au BufRead *.py compiler nose
