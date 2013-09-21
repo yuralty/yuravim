@@ -348,6 +348,11 @@ function! NumberToggle()
     endif
 endfunc
 
+" Set easy motion colors
+hi link EasyMotionTarget ErrorMsg
+hi link EasyMotionShade  Comment
+
+
 "if exists("&colorcolumn")
 "   set colorcolumn=79
 "endif
