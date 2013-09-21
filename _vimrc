@@ -2,7 +2,6 @@
 " ==========================================================
 " Dependencies - Libraries/Applications outside of vim
 " ==========================================================
-" Pep8 - http://pypi.python.org/pypi/pep8
 " Pyflakes
 " Ack
 " nose, django-nose
@@ -10,16 +9,13 @@
 " ==========================================================
 " Plugins included
 " ==========================================================
-" Pathogen
+" Pathogen => replaced by vundle
 "     Better Management of VIM plugins
 "
 " GunDo
 "     Visual Undo in vim with diff's to check the differences
 "
-" Pytest
-"     Runs your Python tests in Vim.
-"
-" Commant-T
+" Commant-T => replaced by ctrlp
 "     Allows easy search and opening of files within a given path
 "
 " Snipmate
@@ -31,20 +27,8 @@
 " Fugitive
 "    Interface with git from vim
 "
-" Git
-"    Syntax highlighting for git config files
-"
-" Pydoc
-"    Opens up pydoc within vim
-"
 " Surround
 "    Allows you to surround text with open/close tags
-"
-" Py.test
-"    Run py.test test's from within vim
-"
-" MakeGreen
-"    Generic test runner that works with nose
 "
 " ==========================================================
 " Shortcuts
@@ -79,12 +63,19 @@ map <leader>td <Plug>TaskList
 let g:pep8_map='<leader>8'
 
 " run py.test's
-nmap <silent><Leader>tf <Esc>:Pytest file<CR>
-nmap <silent><Leader>tc <Esc>:Pytest class<CR>
-nmap <silent><Leader>tm <Esc>:Pytest method<CR>
-nmap <silent><Leader>tn <Esc>:Pytest next<CR>
-nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
-nmap <silent><Leader>te <Esc>:Pytest error<CR>
+"nmap <silent><Leader>tf <Esc>:Pytest file<CR>
+"nmap <silent><Leader>tc <Esc>:Pytest class<CR>
+"nmap <silent><Leader>tm <Esc>:Pytest method<CR>
+"nmap <silent><Leader>tn <Esc>:Pytest next<CR>
+"nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
+"nmap <silent><Leader>te <Esc>:Pytest error<CR>
+
+" fugitive shortcuts
+nmap <leader>ga :Git add .<CR>
+nmap <leader>gc :Gcommit <CR>
+nmap <leader>gs :Gstatus <CR>
+nmap <leader>gp <Esc>:Git push 
+nmap <leader>G <Esc>:Git 
 
 " Run django tests
 map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
@@ -110,10 +101,10 @@ map <leader>f :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
 
 " Ack searching
-nmap <leader>a <Esc>:Ack!
+nmap <leader>A <Esc>:Ack!
 
 " Load the Gundo window
-map <leader>g :GundoToggle<CR>
+map <leader>gu :GundoToggle<CR>
 
 " Jump to the definition of whatever the cursor is on
 map <leader>j :RopeGotoDefinition<CR>
@@ -128,6 +119,7 @@ nmap <Right> <Nop>
 nmap <Up> <Nop>
 nmap <Down> <Nop>
 map <leader>s :w<CR>
+nmap <C-n> :call NumberToggle()<CR>
 
 " Use ctrl+arrows to switch between windows
 map <C-Down> <C-w>j
@@ -155,16 +147,19 @@ Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-easymotion'
 
 " Version control
 Bundle 'Gundo'
-Bundle 'motemen/git-vim'
+Bundle 'tpope/vim-fugitive'
 
 " Input aids
 Bundle 'The-NERD-Commenter'
 Bundle 'UltiSnips'
-Bundle 'SearchComplete'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'klen/rope-vim'
+Bundle 'AutoClose'
+Bundle 'rails.vim'
 
 
 " syntax checker
@@ -231,6 +226,7 @@ set scrolloff=3             " Keep 3 context lines above and below the cursor
 set backspace=2             " Allow backspacing over autoindent, EOL, and BOL
 set showmatch               " Briefly jump to a paren once it's balanced
 set wrap                    " wrap text
+set textwidth=78
 set linebreak               " don't wrap textin the middle of a word
 set autoindent              " always set autoindenting on
 set smartindent             " use smart indent if there is no indent file
@@ -343,6 +339,14 @@ endif
 if filereadable($VIRTUAL_ENV . '/.vimrc')
     source $VIRTUAL_ENV/.vimrc
 endif
+
+function! NumberToggle()
+    if (&relativenumber == 1)
+        set norelativenumber
+    else
+        set relativenumber
+    endif
+endfunc
 
 "if exists("&colorcolumn")
 "   set colorcolumn=79
