@@ -349,8 +349,8 @@ function! NumberToggle()
 endfunc
 
 " Set easy motion colors
-hi link EasyMotionTarget ErrorMsg
-hi link EasyMotionShade  Comment
+hi EasyMotionTarget ctermbg=none ctermfg=red
+hi EasyMotionShade ctermbg=none ctermfg=gray
 
 
 "if exists("&colorcolumn")
